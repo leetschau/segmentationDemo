@@ -1,3 +1,4 @@
+SegDict = new Mongo.Collection('segdict').findOne()
 if Meteor.isClient
   Template.hello.helpers
     parseStr: () ->
@@ -14,6 +15,10 @@ if Meteor.isClient
             Session.set "parseRes", result
 
 if Meteor.isServer
+  # dict = {}
+  # Meteor.startup ->
+  #  dict = SegDict
+    
   Meteor.methods
     parseChn: (inp) ->
-      return Seg.parse inp
+      return Seg.parse inp, SegDict
