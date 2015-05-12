@@ -1,0 +1,15 @@
+<head>
+  <title>segmentation demo</title>
+</head>
+
+<body>
+  <h1>Welcome to segmentation demo!</h1>
+
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <input type="text" id="search-box"/>
+  <button>Parse</button>
+  <p>The parse result is: {{parseStr}}.</p>
+</template>
