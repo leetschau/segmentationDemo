@@ -15,10 +15,6 @@ if Meteor.isClient
             Session.set "parseRes", result
 
 if Meteor.isServer
-  # dict = {}
-  # Meteor.startup ->
-  #  dict = SegDict
-    
   Meteor.methods
     parseChn: (inp) ->
       return Seg.parse inp, SegDict
